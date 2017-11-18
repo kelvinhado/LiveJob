@@ -13,7 +13,7 @@ import java.util.Date;
  */
 
 @Entity(tableName = "jobs")
-public class Job {
+public class JobEntity {
 
     @NonNull
     @ColumnInfo(name = "job_id")
@@ -23,7 +23,7 @@ public class Job {
     public String title;
 
     @Embedded
-    public Company company;
+    public CompanyEntity companyEntity;
 
     public double maxSalary;
 

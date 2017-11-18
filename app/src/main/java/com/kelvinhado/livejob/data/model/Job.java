@@ -1,6 +1,6 @@
 package com.kelvinhado.livejob.data.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Created by kelvin on 19/10/2017 .

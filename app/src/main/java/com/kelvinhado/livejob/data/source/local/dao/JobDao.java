@@ -6,7 +6,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
-import com.kelvinhado.livejob.data.source.local.entities.Job;
+import com.kelvinhado.livejob.data.source.local.entities.JobEntity;
 
 import java.util.List;
 
@@ -20,14 +20,14 @@ import io.reactivex.Flowable;
 public interface JobDao {
 
     @Query("SELECT * FROM jobs")
-    Flowable<List<Job>> getAllJobs();
+    Flowable<List<JobEntity>> getAllJobs();
 
     @Insert
-    void insertJob(Job job);
+    void insertJob(JobEntity jobEntity);
 
     @Delete
-    void deleteJobs(Job... jobs);
+    void deleteJobs(JobEntity... jobEntities);
 
     @Update
-    void updateJobs(Job... jobs);
+    void updateJobs(JobEntity... jobEntities);
 }
