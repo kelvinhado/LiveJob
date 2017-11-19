@@ -10,7 +10,7 @@ import com.kelvinhado.livejob.data.source.local.entities.JobEntity;
 
 import java.util.List;
 
-import io.reactivex.Flowable;
+import io.reactivex.Single;
 
 /**
  * Created by kelvinhado.
@@ -20,7 +20,7 @@ import io.reactivex.Flowable;
 public interface JobDao {
 
     @Query("SELECT * FROM jobs")
-    Flowable<List<JobEntity>> getAllJobs();
+    Single<List<JobEntity>> getAllJobs();
 
     @Insert
     void insertJob(JobEntity jobEntity);

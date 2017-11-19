@@ -12,7 +12,7 @@ import com.kelvinhado.livejob.data.source.local.utils.DaoUtils;
 
 import java.util.List;
 
-import io.reactivex.Flowable;
+import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
@@ -50,7 +50,7 @@ public class JobLocalDataSource implements JobDataSource {
      */
     @Override
     public void getJobs(@NonNull final LoadJobsCallback callback) {
-        Flowable<List<JobEntity>> flowable = mJobDao.getAllJobs();
+        Single<List<JobEntity>> flowable = mJobDao.getAllJobs();
         flowable.subscribeOn(Schedulers.io())
                 .map(new Function<List<JobEntity>, List<Job>>() {
                     @Override
